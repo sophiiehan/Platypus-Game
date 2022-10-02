@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        patDistance = 10;
+        patDistance = 1.5f;
         speed = 10;
         xBoundLeft = -6;
         xBoundRight = 13;
@@ -27,12 +27,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x >xBoundLeft && x<xBoundRight){
+        if(transform.position.x >=xBoundLeft && transform.position.x<=xBoundRight){
             horizontalInput = Input.GetAxis("Horizontal");
             transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
         }
         
-        if(transform.position.y > -yBound && transform.position.y < yBound){
+        if(transform.position.y >= -yBound && transform.position.y <= yBound){
             verticalInput = Input.GetAxis("Vertical");
             transform.Translate(Vector3.up * Time.deltaTime * speed * verticalInput);
         }
