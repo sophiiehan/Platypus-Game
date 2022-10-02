@@ -7,9 +7,9 @@ using TMPro;
 public class PlatypusManager : MonoBehaviour
 {
     public int pats;
-    public int winCondition;
+    public int winningPatNumber;
     public TextMeshProUGUI patText;
-    public TextMeshProUGUI timeText;
+    //public TextMeshProUGUI timeText;
     public Sprite []phases;
     private SpriteRenderer spriteRender;
     private int spriteOffset;
@@ -27,15 +27,16 @@ public class PlatypusManager : MonoBehaviour
         spriteRender = GameObject.Find("Paper").GetComponent<SpriteRenderer>();
         pats = 0;
         patsPerPhase = cyclesPerPhase * spritesPerCycle;
+        winningPatNumber = 15;
     }
     
     // Update is called once per frame
     void Update()
     {
         float time = microgameJamController.GetTimer();
-        timeText.text = "Time: " + time;
-        if (time <= .1 && pats >= winCondition) {
-            microgameJamController.WinGame();
+        //timeText.text = "Time: " + time;
+        if (time <= .1 && pats >= winningPatNumber) {
+    
         }
     }  
 
