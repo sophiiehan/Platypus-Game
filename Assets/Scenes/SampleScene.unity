@@ -381,7 +381,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -286, y: 153}
+  m_AnchoredPosition: {x: -298, y: 153}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &377032342
@@ -854,7 +854,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13315d2351f4841599c1ecc65608b87e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -873,8 +873,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581321158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16, y: -2.92, z: 0}
-  m_LocalScale: {x: 3.3767, y: 2.6867, z: 1}
+  m_LocalPosition: {x: 0.16, y: -1.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -895,6 +895,16 @@ MonoBehaviour:
   pats: 0
   winCondition: 0
   patText: {fileID: 377032342}
+  timeText: {fileID: 0}
+  phases:
+  - {fileID: 21300000, guid: 13315d2351f4841599c1ecc65608b87e, type: 3}
+  - {fileID: 21300000, guid: 57e61ffdb4300432cb97c226cbc32d6e, type: 3}
+  - {fileID: 21300000, guid: e53ec3d3e8d0941b5ba49880f2f3b1e1, type: 3}
+  - {fileID: 21300000, guid: ff5d4842fbcba44139827e25694f1d3b, type: 3}
+  - {fileID: 21300000, guid: 64b1b6bf1ebe04a9e8ccf7bbc8261db6, type: 3}
+  spriteRender: {fileID: 0}
+  cyclesPerPhase: 5
+  spritesPerCycle: 3
 --- !u!58 &1581321162
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -908,9 +918,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.00000004437015}
+  m_Offset: {x: -0.2783525, y: -0.80231106}
   serializedVersion: 2
-  m_Radius: 0.4104278
+  m_Radius: 1.6548289
 --- !u!1 &2121841296
 GameObject:
   m_ObjectHideFlags: 0

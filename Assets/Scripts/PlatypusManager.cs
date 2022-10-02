@@ -35,13 +35,13 @@ public class PlatypusManager : MonoBehaviour
 
         }
 
-        timeText.text = "Time: " +GameObject.Find("MicrogameJamController").GetComponent<MicrogameJamController>().GetTimer();
+        //timeText.text = "Time: " +GameObject.Find("MicrogameJamController").GetComponent<MicrogameJamController>().GetTimer();
 
     }
     public void UpdatePats(int patsToAdd){
         pats++;
         patText.text = "Pats: " + pats;
-        if (pats>1 && pats%patsPerPhase==1) spriteOffset ++;
+        if (pats>1 && pats%patsPerPhase==1) spriteOffset++;
         spriteRender.sprite = phases[(pats)%3+spriteOffset];
     }
 }
