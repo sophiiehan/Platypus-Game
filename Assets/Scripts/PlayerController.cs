@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     public float xBoundRight;
     public float yBound;
 
+    public GameObject paper;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +25,14 @@ public class PlayerController : MonoBehaviour
         xBoundLeft = -6;
         xBoundRight = 13;
         yBound = 5;
+
+        paper = GameObject.Find("Paper");
     }
 
     // Update is called once per frame
     void Update()
     {
+        //for movement, make sure it doesn't go outside screen
         if(transform.position.x >=xBoundLeft && transform.position.x<=xBoundRight){
             horizontalInput = Input.GetAxis("Horizontal");
             transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
@@ -37,7 +43,7 @@ public class PlayerController : MonoBehaviour
             transform.Translate(Vector3.up * Time.deltaTime * speed * verticalInput);
         }
        
-
+        //patting
         if(Input.GetKeyDown(KeyCode.Space)){
             transform.Translate(new Vector3(0,-patDistance, 0));
         }
@@ -46,4 +52,14 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
+     void OnTriggerEnter(Collider other)
+    {
+        if (other.tag== "Paper"){
+            paper.GetComponent<PlatypusManager>().pats++;
+            Debug.Log(paper.GetComponent<PlatypusManager>().pats++);
+        }
+    }
+
+    
 }
