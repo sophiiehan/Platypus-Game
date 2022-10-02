@@ -53,14 +53,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-     void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("Collision");
-        if (other.gameObject.tag== "Paper"){
-            paper.GetComponent<PlatypusManager>().pats++;
-            Debug.Log(paper.GetComponent<PlatypusManager>().pats++);
-        }
-    }
+    
 
     
 }

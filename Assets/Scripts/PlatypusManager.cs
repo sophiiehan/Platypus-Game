@@ -18,4 +18,11 @@ public class PlatypusManager : MonoBehaviour
     {
 
     }
+    private void OnTriggerEnter2D(Collider2D other) {
+       Debug.Log("Collision");
+        if (other.gameObject.CompareTag("Player")){
+            pats++;
+            Debug.Log(pats);
+        }
+    }
 }
