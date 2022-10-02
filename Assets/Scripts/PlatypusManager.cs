@@ -9,6 +9,10 @@ public class PlatypusManager : MonoBehaviour
     public int pats;
     public int winningPatNumber;
     public TextMeshProUGUI patText;
+
+    //checks if platypus is on screen
+    public bool isPlatypusOnScreen;
+
     //public TextMeshProUGUI timeText;
     public Sprite []phases;
     private SpriteRenderer spriteRender;
@@ -28,6 +32,7 @@ public class PlatypusManager : MonoBehaviour
         pats = 0;
         patsPerPhase = cyclesPerPhase * spritesPerCycle;
         winningPatNumber = 15;
+        isPlatypusOnScreen = false;
     }
     
     // Update is called once per frame
@@ -36,7 +41,8 @@ public class PlatypusManager : MonoBehaviour
         float time = microgameJamController.GetTimer();
         //timeText.text = "Time: " + time;
         if (time <= .1 && pats >= winningPatNumber) {
-    
+            isPlatypusOnScreen = true;
+            //play paper explosion animation once
         }
     }  
 
