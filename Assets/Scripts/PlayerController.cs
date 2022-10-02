@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float yBound;
 
     public GameObject paper;
+    public bool canPat;
 
 
     // Start is called before the first frame update
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
         xBoundLeft = -6;
         xBoundRight = 13;
         yBound = 5;
+        canPat = false;
 
         paper = GameObject.Find("Paper");
     }
@@ -46,6 +48,10 @@ public class PlayerController : MonoBehaviour
         //patting
         if(Input.GetKeyDown(KeyCode.Space)){
             transform.Translate(new Vector3(0,-patDistance, 0));
+            if(canPat){
+                paper.GetComponent<PlatypusManager>().pats++;
+                Debug.Log(paper.GetComponent<PlatypusManager>().pats);
+            }
         }
         if(Input.GetKeyUp(KeyCode.Space)){
             transform.Translate(new Vector3(0,patDistance, 0));
@@ -53,7 +59,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.CompareTag("Paper")){
+            canPat = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other) {
+        if (other.gameObject.CompareTag("Paper")){
+            canPat = false;
+        }
+    }
 
     
 }
