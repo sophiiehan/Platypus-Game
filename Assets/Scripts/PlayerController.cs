@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
         canPat = false;
 
         paper = GameObject.Find("Paper");
+        GameObject.Find("MicrogameJamController").GetComponent<MicrogameJamController>().SetMaxTimer(15);
+
     }
 
     // Update is called once per frame
@@ -59,6 +61,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //when hand coll
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Paper")){
             canPat = true;
