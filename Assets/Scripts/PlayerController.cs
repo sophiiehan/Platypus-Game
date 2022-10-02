@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space)){
             transform.Translate(new Vector3(0,-patDistance, 0));
             if(canPat){
-                paper.GetComponent<PlatypusManager>().pats++;
+                paper.GetComponent<PlatypusManager>().UpdatePats(1);
                 Debug.Log(paper.GetComponent<PlatypusManager>().pats);
             }
         }
