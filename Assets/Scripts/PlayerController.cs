@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public GameObject paper;
     public bool canPat;
 
+    public Sprite []arms;
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,8 @@ public class PlayerController : MonoBehaviour
         paper = GameObject.Find("Paper");
         GameObject.Find("MicrogameJamController").GetComponent<MicrogameJamController>().SetMaxTimer(15);
 
+        int armSelect = (int)(Random.value*3);
+        GameObject.Find("Hand").GetComponent<SpriteRenderer>().sprite = arms[armSelect];
     }
 
     // Update is called once per frame
