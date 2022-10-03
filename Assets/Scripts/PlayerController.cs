@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         patDistance = 1.5f;
         speed = 10;
-        xBoundLeft = -6;
+        xBoundLeft = -0.37f;
         xBoundRight = 13;
         yBound = 5;
         canPat = false;
@@ -40,12 +40,26 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
         //for movement, make sure it doesn't go outside screen
-        if(transform.position.x >=xBoundLeft && transform.position.x<=xBoundRight){
-            horizontalInput = Input.GetAxis("Horizontal");
-            transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
+        if(transform.position.x <=xBoundLeft){
+            transform.position = new Vector3(xBoundLeft, transform.position.y, transform.position.z);
+        }
+        if(transform.position.x>=xBoundRight){
+            transform.position = new Vector3(xBoundRight, transform.position.y, transform.position.z);
         }
         
+        verticalInput = Input.GetAxis("Vertical");
+        transform.Translate(Vector3.up * Time.deltaTime * speed * verticalInput);
+
+        if(transform.position.y <=-yBound){
+            transform.position = new Vector3(transform.position.x, -yBound, transform.position.z);
+        }
+        if(transform.position.y>=yBound){
+            transform.position = new Vector3(transform.position.x, yBound, transform.position.z);
+        }
+
         if(transform.position.y >= -yBound && transform.position.y <= yBound){
             verticalInput = Input.GetAxis("Vertical");
             transform.Translate(Vector3.up * Time.deltaTime * speed * verticalInput);

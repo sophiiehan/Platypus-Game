@@ -379,7 +379,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3f3cb08d86ea94848b42e91931451160, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08876992252c94ea381e79a17bfa0081, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -427,6 +427,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9265d30dab1824c84b60e99572977468, type: 3}
   - {fileID: 21300000, guid: b11372096ce04460887e0ad522fa834c, type: 3}
   platypusSound: {fileID: 0}
+  playSound: 0
 --- !u!82 &1475460021
 AudioSource:
   m_ObjectHideFlags: 0
@@ -440,7 +441,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: b8735c5937b214db09a3667ca3f99d54, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 1.2
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -661,11 +662,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 923173602009640435, guid: 77fc25d8cbb6341baa75a50c631e282f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.08
+      value: 9.31
       objectReference: {fileID: 0}
     - target: {fileID: 923173602009640435, guid: 77fc25d8cbb6341baa75a50c631e282f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.66
+      value: 1.67
       objectReference: {fileID: 0}
     - target: {fileID: 923173602009640435, guid: 77fc25d8cbb6341baa75a50c631e282f, type: 3}
       propertyPath: m_LocalPosition.z
