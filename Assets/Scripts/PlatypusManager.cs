@@ -39,21 +39,11 @@ public class PlatypusManager : MonoBehaviour
     void Update()
     {
         float time = microgameJamController.GetTimer();
-        Debug.Log(time);
         //timeText.text = "Time: " + time;
         if (pats == winningPatNumber) {
             isPlatypusOnScreen = true;
             GameObject.Find("Paper").SetActive(false);
             //play paper explosion animation once
-        }
-
-        if (time <= .1) {
-            Debug.Log(pats >= winningPatNumber);
-            if(pats >= winningPatNumber){
-                microgameJamController.WinGame();
-            }else{
-                microgameJamController.LoseGame();
-            }
         }
     }
 

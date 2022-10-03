@@ -28,6 +28,14 @@ public class WinAnimation : MonoBehaviour
     void Update()
     {
         float time = microgameJamController.GetTimer();
+        if (time <= .1) {
+            Debug.Log(paper.pats >= paper.winningPatNumber);
+            if(paper.pats >= paper.winningPatNumber){
+                microgameJamController.WinGame();
+            }else{
+                microgameJamController.LoseGame();
+            }
+        }
         if (paper.isPlatypusOnScreen && explosionUpdate < totalAnimationFrames && lastUpdateTime-time > 0.08)
         {
             lastUpdateTime = time;
@@ -36,5 +44,8 @@ public class WinAnimation : MonoBehaviour
                 explosionUpdate++;
             }
         }
+
+
+        
     }
 }
