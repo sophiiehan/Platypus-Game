@@ -49,14 +49,25 @@ public class PlayerController : MonoBehaviour
        
         //patting
         if(Input.GetKeyDown(KeyCode.Space)){
-            transform.Translate(new Vector3(0,-patDistance, 0));
+            if(paper.GetComponent<PlatypusManager>().isPlatypusOnScreen == false){
+             transform.Translate(new Vector3(0,-patDistance, 0));
+            }
+             if(paper.GetComponent<PlatypusManager>().isPlatypusOnScreen == true){
+             transform.Translate(new Vector3(patDistance,0, 0));
+            }
             if(canPat){
                 paper.GetComponent<PlatypusManager>().UpdatePats(1);
                 Debug.Log(paper.GetComponent<PlatypusManager>().pats);
             }
         }
         if(Input.GetKeyUp(KeyCode.Space)){
-            transform.Translate(new Vector3(0,patDistance, 0));
+
+            if(paper.GetComponent<PlatypusManager>().isPlatypusOnScreen == false){
+             transform.Translate(new Vector3(0,patDistance, 0));
+            }
+             if(paper.GetComponent<PlatypusManager>().isPlatypusOnScreen == true){
+             transform.Translate(new Vector3(-patDistance,0, 0));
+            }
 
         }
     }

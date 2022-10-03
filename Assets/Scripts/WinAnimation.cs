@@ -18,6 +18,7 @@ public class WinAnimation : MonoBehaviour
         paper = GameObject.Find("Paper").GetComponent<PlatypusManager>();
         spriteRender = GameObject.Find("background").GetComponent<SpriteRenderer>();
         microgameJamController = GameObject.Find("MicrogameJamController").GetComponent<MicrogameJamController>();
+        GameObject.Find("MicrogameJamController").GetComponent<MicrogameJamController>().SetMaxTimer(15);
         lastUpdateTime = 10;
         explosionUpdate = 0;
         totalAnimationFrames = 8*10;
@@ -30,8 +31,10 @@ public class WinAnimation : MonoBehaviour
         if (paper.isPlatypusOnScreen && explosionUpdate < totalAnimationFrames && lastUpdateTime-time > 0.08)
         {
             lastUpdateTime = time;
-            spriteRender.sprite = frames[explosionUpdate];
-            explosionUpdate++;
+            if(explosionUpdate<frames.Length){
+                spriteRender.sprite = frames[explosionUpdate];
+                explosionUpdate++;
+            }
         }
     }
 }
