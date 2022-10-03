@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         paper = GameObject.Find("Paper");
         GameObject.Find("MicrogameJamController").GetComponent<MicrogameJamController>().SetMaxTimer(15);
 
-        int armSelect = (int)(Random.value*3);
+        int armSelect = (int)(Random.value*4);
         GameObject.Find("Hand").GetComponent<SpriteRenderer>().sprite = arms[armSelect];
     }
 
