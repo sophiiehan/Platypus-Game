@@ -11,6 +11,8 @@ public class WinAnimation : MonoBehaviour
     private float lastUpdateTime;
     private MicrogameJamController microgameJamController;
     public Sprite []frames;
+    public AudioSource platypusSound;
+    public bool playSound;
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +24,17 @@ public class WinAnimation : MonoBehaviour
         lastUpdateTime = 10;
         explosionUpdate = 0;
         totalAnimationFrames = 8*10;
+        platypusSound = GetComponent<AudioSource>();
+        playSound = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         float time = microgameJamController.GetTimer();
+        // if(paper.pats == paper.winningPatNumber){
+
+      //  }
         if (time <= .1) {
             Debug.Log(paper.pats >= paper.winningPatNumber);
             if(paper.pats >= paper.winningPatNumber){
@@ -36,16 +43,22 @@ public class WinAnimation : MonoBehaviour
                 microgameJamController.LoseGame();
             }
         }
+       
         if (paper.isPlatypusOnScreen && explosionUpdate < totalAnimationFrames && lastUpdateTime-time > 0.08)
         {
+            playSoundMethod();
             lastUpdateTime = time;
             if(explosionUpdate<frames.Length){
                 spriteRender.sprite = frames[explosionUpdate];
                 explosionUpdate++;
             }
+        } 
+    }
+
+    private void playSoundMethod(){
+        if(playSound){
+            platypusSound.Play();
         }
-
-
-        
+        playSound = false;
     }
 }

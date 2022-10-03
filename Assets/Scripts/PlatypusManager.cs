@@ -23,10 +23,12 @@ public class PlatypusManager : MonoBehaviour
     public int spritesPerCycle;
     private int patsPerPhase;
     private MicrogameJamController microgameJamController;
+    private WinAnimation winAnim;
     // Start is called before the first frame update
     void Start()
     {
         microgameJamController = GameObject.Find("MicrogameJamController").GetComponent<MicrogameJamController>();
+        winAnim = GameObject.Find("background").GetComponent<WinAnimation>();
         microgameJamController.SetMaxTimer(15);
         spriteRender = GameObject.Find("Paper").GetComponent<SpriteRenderer>();
         pats = 0;
@@ -42,6 +44,7 @@ public class PlatypusManager : MonoBehaviour
         //timeText.text = "Time: " + time;
         if (pats == winningPatNumber) {
             isPlatypusOnScreen = true;
+            winAnim.playSound = true;
             GameObject.Find("Paper").SetActive(false);
             //play paper explosion animation once
         }
