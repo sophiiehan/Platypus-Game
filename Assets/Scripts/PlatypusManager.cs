@@ -8,7 +8,7 @@ public class PlatypusManager : MonoBehaviour
 {
     public int pats;
     public int winningPatNumber;
-    public TextMeshProUGUI patText;
+    // public TextMeshProUGUI patText;
 
     //checks if platypus is on screen
     public bool isPlatypusOnScreen;
@@ -59,7 +59,7 @@ public class PlatypusManager : MonoBehaviour
 
     public void UpdatePats(int patsToAdd){
         pats++;
-        patText.text = "Pats: " + pats;
+        // patText.text = "Pats: " + pats;
         if (pats>1 && pats%patsPerPhase==1) spriteOffset ++;
         spriteRender.sprite = phases[(pats)%3+spriteOffset];
     }
