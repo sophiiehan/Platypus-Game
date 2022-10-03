@@ -720,6 +720,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1475460019}
   - component: {fileID: 1475460018}
+  - component: {fileID: 1475460020}
   m_Layer: 0
   m_Name: background
   m_TagString: Untagged
@@ -794,6 +795,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1475460020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475460017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc8531aa9bd4411bbe7b43cb07f7c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1581321158
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,16 +906,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pats: 0
-  winCondition: 0
+  winningPatNumber: 36
   patText: {fileID: 377032342}
-  timeText: {fileID: 0}
+  isPlatypusOnScreen: 0
   phases:
   - {fileID: 21300000, guid: 13315d2351f4841599c1ecc65608b87e, type: 3}
   - {fileID: 21300000, guid: 57e61ffdb4300432cb97c226cbc32d6e, type: 3}
   - {fileID: 21300000, guid: e53ec3d3e8d0941b5ba49880f2f3b1e1, type: 3}
   - {fileID: 21300000, guid: ff5d4842fbcba44139827e25694f1d3b, type: 3}
   - {fileID: 21300000, guid: 64b1b6bf1ebe04a9e8ccf7bbc8261db6, type: 3}
-  spriteRender: {fileID: 0}
   cyclesPerPhase: 5
   spritesPerCycle: 3
 --- !u!58 &1581321162

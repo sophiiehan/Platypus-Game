@@ -27,11 +27,11 @@ public class PlatypusManager : MonoBehaviour
     void Start()
     {
         microgameJamController = GameObject.Find("MicrogameJamController").GetComponent<MicrogameJamController>();
-        microgameJamController.SetMaxTimer(15);
+        // microgameJamController.SetMaxTimer(15);
         spriteRender = GameObject.Find("Paper").GetComponent<SpriteRenderer>();
-        pats = 0;
+        // pats = 0;
         patsPerPhase = cyclesPerPhase * spritesPerCycle;
-        winningPatNumber = 15;
+        // winningPatNumber = 15;
         isPlatypusOnScreen = false;
     }
     
@@ -40,11 +40,12 @@ public class PlatypusManager : MonoBehaviour
     {
         float time = microgameJamController.GetTimer();
         //timeText.text = "Time: " + time;
-        if (time <= .1 && pats >= winningPatNumber) {
+        if (pats >= winningPatNumber) {
             isPlatypusOnScreen = true;
+            GameObject.Find("Paper").SetActive(false);
             //play paper explosion animation once
         }
-    }  
+    }
 
     public void UpdatePats(int patsToAdd){
         pats++;
